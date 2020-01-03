@@ -7,7 +7,10 @@
   <script src="pixi.min.js"></script>
 <body>
   Level: <input id="level" style="width:40px" value="1"> <button onclick="loadUserlevel()">load</button> <button onclick="showLevel()">restart</button> <br><br>
-  <div id="canvas"/>
+  <div id="canvas"></div>
+  <br><br>
+  You are given a grid, filled with numbers. You can move a number horizontally or vertically by exactly as many cells as the value of the number. The number has to be pushed on another number. The moved number will then be added to the other number or subtracted.
+  The absolute value will be taken on subtraction. The goal is to clear the board and not have any numbers remaining.
 </body>
 
 <script>
@@ -97,7 +100,6 @@ app.renderer.backgroundColor = 0x333333;
 document.getElementById('canvas').appendChild(app.view);
 
 function update(){
-	//requestAnimFrame(update);
 	app.renderer.render(stage);
 };
 update();
@@ -233,3 +235,4 @@ function createRectangle(x, y, size, color) {
 loadLevel(1);
 </script>
 </html>
+
