@@ -6,11 +6,24 @@
 </head>
   <script src="pixi.min.js"></script>
 <body>
-  Level: <input id="level" style="width:40px" value="1"> <button onclick="loadUserlevel()">load</button> <button onclick="showLevel()">restart</button> <br><br>
+  Level: <input id="level" style="width:40px" value="1"> <button onclick="loadGeneratedlevel()">generate</button> <button onclick="showLevel()">restart</button> <br><br>
   <div id="canvas"></div>
   <br><br>
   You are given a grid, filled with numbers. You can move a number horizontally or vertically by exactly as many cells as the value of the number. The number has to be pushed on another number. The moved number will then be added to the other number or subtracted.
   The absolute value will be taken on subtraction. The goal is to clear the board and not have any numbers remaining.
+<br><br>
+<table>
+  <tr> <td>
+Load level: <br>
+<textarea id="levelInput" style="width:300px; height:150px"></textarea> <br>
+<button onclick="loadUserlevel()">load</button>
+</td>
+  <td>
+Performed actions: <br>
+<textarea id="levelActions" style="width:300px; height:150px"></textarea>
+</td>
+  </tr>
+</table>
 </body>
 
 <script>
@@ -84,6 +97,11 @@ class MovingNumber {
   }
 
   moveTo(num, add) {
+    var dir = 'U';
+    if (this.x > num.x) dir = 'L';
+    if (this.x < num.x) dir = 'R';
+    if (this.y < num.y) dir = 'D';
+    document.getElementById('levelActions').value += this.x + ' ' + this.y + ' ' + dir + ' ' + (add?'+':'-') + '\n';
     if (add) num.value += this.value;
     else num.value = Math.abs(num.value - this.value);
     num.graphics.children[0].text = num.value;
@@ -119,7 +137,23 @@ var selectedNumber;
 
 function randomInt(upper) { return Math.floor(Math.random() * upper); }
 
-function loadUserlevel() { loadLevel(parseInt(document.getElementById('level').value)); }
+function loadGeneratedlevel() { loadLevel(parseInt(document.getElementById('level').value)); }
+
+function loadUserlevel() {
+  var input = document.getElementById('levelInput').value;
+  var lines = input.split('\n');
+  width = parseInt(lines[0].split(' ')[0]);
+  height = parseInt(lines[0].split(' ')[1]);
+  grid = new Array(width);
+  for (var i = 0; i < width; i++) grid[i] = new Array(height).fill(0);
+  for (let y = 0; y < height; y++) {
+    var nums = lines[y+1].split(' ');
+    for (let x = 0; x < width; x++) {
+      grid[x][y] = parseInt(nums[x]);
+    }
+  }
+  showLevel();
+}
 
 function loadLevel(level) {
   var spawns = Math.floor(3 + level / 2);
@@ -176,10 +210,23 @@ function loadLevel(level) {
           }
       }
   }
+  var levelInput = width + ' ' + height;
+  for (let y = 0; y < height; y++) {
+    var line = '\n'
+    for (let x = 0; x < width; x++) {
+      if (x > 0) line += ' '
+      line += grid[x][y];
+    }
+    levelInput += line;
+  }
+  document.getElementById('levelInput').value = levelInput;
+
+
   showLevel();
 }
 
 function showLevel() {
+  document.getElementById('levelActions').value = '';
   selectedNumber = null;
   stage.removeChildren();
   cellSize = Math.min((app.view.width-40)/width, (app.view.height-40)/height);
@@ -235,4 +282,3 @@ function createRectangle(x, y, size, color) {
 loadLevel(1);
 </script>
 </html>
-
