@@ -6,7 +6,10 @@
 </head>
   <script src="pixi.min.js"></script>
 <body>
-  Level: <input id="level" style="width:40px" value="1"> <button onclick="loadGeneratedlevel()">generate</button> <button onclick="showLevel()">restart</button> <br><br>
+  Level: <input id="level" style="width:40px" value="1">
+  <button onclick="loadGeneratedlevel()">generate</button>
+  <button onclick="showLevel()">restart</button>
+  <button onclick="undo()">undo</button> <br><br>
   <div id="canvas"></div>
   <br><br>
   You are given a grid, filled with numbers. You can move a number horizontally or vertically by exactly as many cells as the value of the number. The number has to be pushed on another number. The moved number will then be added to the other number or subtracted.
@@ -116,6 +119,17 @@ let stage = app.stage;
 stage.interactive = true;
 app.renderer.backgroundColor = 0x333333;
 document.getElementById('canvas').appendChild(app.view);
+var context = document.getElementById('canvas').firstElementChild;
+function gameResize() {
+  if (window.innerWidth/window.innerHeight > 1600/900) {
+    context.height = Math.min(1600, window.innerHeight);
+    context.width = 1600*context.height/900;
+  } else {
+    context.width = Math.min(1600, window.innerWidth);
+    context.height = 900*context.width/1600;
+  }
+}
+gameResize();
 
 function update(){
 	app.renderer.render(stage);
@@ -153,6 +167,36 @@ function loadUserlevel() {
     }
   }
   showLevel();
+}
+
+function undo() {
+  var actions = document.getElementById('levelActions').value.trim().split('\n');
+  document.getElementById('levelActions').value = '';
+  var backup = [];
+  for (var i = 0; i < grid.length; i++)
+    backup[i] = grid[i].slice();
+  for (var i = 0; i < actions.length - 1; i++) {
+    var parts = actions[i].split(' ');
+    var x = parseInt(parts[0]);
+    var y = parseInt(parts[1]);
+    var dir = parts[2];
+    var op = parts[3];
+    var dx = 0;
+    var dy = 0;
+    if (dir ==="R") dx=grid[x][y];
+    if (dir ==="L") dx=-grid[x][y];
+    if (dir ==="D") dy=grid[x][y];
+    if (dir ==="U") dy=-grid[x][y];
+    if (op === "+") grid[x+dx][y+dy] += grid[x][y];
+    else grid[x+dx][y+dy] -= grid[x][y];
+    grid[x+dx][y+dy] = Math.abs(grid[x+dx][y+dy]);
+    grid[x][y] = 0;
+  }
+  showLevel();
+  grid = backup;
+  for (var i = 0; i < actions.length - 1; i++) {
+    document.getElementById('levelActions').value += actions[i] + '\n';
+  }
 }
 
 function loadLevel(level) {
