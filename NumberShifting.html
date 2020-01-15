@@ -120,16 +120,6 @@ stage.interactive = true;
 app.renderer.backgroundColor = 0x333333;
 document.getElementById('canvas').appendChild(app.view);
 var context = document.getElementById('canvas').firstElementChild;
-function gameResize() {
-  if (window.innerWidth/window.innerHeight > 1600/900) {
-    context.height = Math.min(1600, window.innerHeight);
-    context.width = 1600*context.height/900;
-  } else {
-    context.width = Math.min(1600, window.innerWidth);
-    context.height = 900*context.width/1600;
-  }
-}
-gameResize();
 
 function update(){
 	app.renderer.render(stage);
@@ -212,6 +202,7 @@ function loadLevel(level) {
   for (var i = 0; i < width; i++) grid[i] = new Array(height).fill(0);
 
   solution = [];
+  var graph = 'digraph {';
   for (var i = 0; i < spawns; i++) {
       if (i == 0 || randomInt(5) == 0) {
           // find pair of empty cells
@@ -226,6 +217,7 @@ function loadLevel(level) {
                   grid[x1][y1] = length;
                   grid[x2][y2] = length;
                   solution.push(x2 + " " + y2 + " " + dirs[dir] + " -");
+                  graph += '\n    "' + x1+'_'+y1 + '" -> "' + x2+'_'+y2+'"';
                   break;
               }
           }
@@ -247,6 +239,7 @@ function loadLevel(level) {
                       grid[x1][y1] = -grid[x1][y1];
                       add = !add;
                   }
+                  graph += '\n    "' + x1+'_'+y1 + '" -> "' + x2+'_'+y2+'"';
                   if (add) solution.push(x2 + " " + y2 + " " + dirs[dir] + " +");
                   else solution.push(x2 + " " + y2 + " " + dirs[dir] + " -");
                   break;
@@ -254,6 +247,8 @@ function loadLevel(level) {
           }
       }
   }
+  graph += '\n}';
+  console.log(graph);
   var levelInput = width + ' ' + height;
   for (let y = 0; y < height; y++) {
     var line = '\n'
