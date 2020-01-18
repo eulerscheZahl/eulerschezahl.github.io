@@ -111,6 +111,7 @@ class MovingNumber {
     this.value = 0;
     this.highlight(true);
     num.highlight(false);
+    printBoard();
   }
 }
 
@@ -191,6 +192,7 @@ function undo() {
 
 function loadLevel(level) {
   var spawns = Math.floor(3 + level / 2);
+  if (level > 150) spawns = 3 + level - 75;
   height = 5;
   width = Math.floor(height * 16 / 9);
   while (width * height < spawns * 2) {
@@ -249,19 +251,28 @@ function loadLevel(level) {
   }
   graph += '\n}';
   console.log(graph);
+
+  showLevel();
+}
+
+function printBoard() {
+  var currentBoard = new Array(width);
+  for (var i = 0; i < width; i++) currentBoard[i] = new Array(height).fill(0);
+  for (var i = 0; i < numbers.length; i++) {
+    var num = numbers[i];
+    currentBoard[num.x][num.y] = num.value;
+  }
+
   var levelInput = width + ' ' + height;
   for (let y = 0; y < height; y++) {
     var line = '\n'
     for (let x = 0; x < width; x++) {
       if (x > 0) line += ' '
-      line += grid[x][y];
+      line += currentBoard[x][y];
     }
     levelInput += line;
   }
   document.getElementById('levelInput').value = levelInput;
-
-
-  showLevel();
 }
 
 function showLevel() {
@@ -298,6 +309,7 @@ function showLevel() {
     }
   }
   stage.addChild(container);
+  printBoard();
 }
 
 function createNumber(x, y, size, value) {
