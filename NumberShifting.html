@@ -37,6 +37,7 @@ class MovingNumber {
     this.value = value;
     this.graphics = graphics;
     this.options = [];
+    this.ruler = [];
     graphics.interactive = true;
     graphics.hitArea = new PIXI.Rectangle(x*cellSize, y*cellSize, cellSize, cellSize);
     graphics.click = (ev) => { this.highlight(true); }
@@ -44,7 +45,9 @@ class MovingNumber {
 
   highlight(toggleSelection) {
     for (var i = 0; i < this.options.length; i++) container.removeChild(this.options[i]);
+    for (var i = 0; i < this.ruler.length; i++) container.removeChild(this.ruler[i]);
     this.options = [];
+    this.ruler = [];
     if (this.value == 0) {
       container.removeChild(this.graphics);
       const index = numbers.indexOf(this);
@@ -94,6 +97,20 @@ class MovingNumber {
           option.zIndex = 1;
           this.options.push(option);
           container.addChild(option);
+        }
+      }
+
+      for (var delta = 1; delta < width; delta++) {
+        for (var dir = 0; dir < 4; dir++) {
+          var x = this.x + delta * dx[dir];
+          var y = this.y + delta * dy[dir];
+          if (x < 0 || x >= width || y < 0 || y >= height) continue;
+          let rulerCell = new PIXI.Text(""+delta, {fontSize: cellSize/6, fill : 0x00000, align : 'center'});
+          rulerCell.anchor.set(0.5);
+          rulerCell.position.x = (x+7/8) * cellSize;
+          rulerCell.position.y = (y+1/8) * cellSize;
+          this.ruler.push(rulerCell);
+          container.addChild(rulerCell);
         }
       }
     }
