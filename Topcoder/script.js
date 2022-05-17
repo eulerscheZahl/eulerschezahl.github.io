@@ -5,9 +5,9 @@ $.getJSON("minified/contests.json")
             contest.submissionStartDate = new Date(contest.submissionStartDate)
             contest.submissionEndDate = new Date(contest.submissionEndDate)
             contest.stage = 1
-            if (contest.submissionStartDate.getMonth() <= 2) contest.stage = 3
-            else if (contest.submissionStartDate.getMonth() >= 9) contest.stage = 2
-            else if (contest.submissionStartDate.getMonth() <= 5) contest.stage = 4
+            if (contest.submissionStartDate.getUTCMonth() <= 2) contest.stage = 3
+            else if (contest.submissionStartDate.getUTCMonth() >= 9) contest.stage = 2
+            else if (contest.submissionStartDate.getUTCMonth() <= 5) contest.stage = 4
 
             $.getJSON("minified/" + contest.id + ".json")
                 .done(function (data) {
