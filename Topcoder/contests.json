@@ -7,10 +7,6 @@
         "tcoRelevant": true,
         "leaderboard": [
             {
-                "name": "ebicochineal",
-                "score": 82.590
-            },
-            {
                 "name": "macs",
                 "score": -1
             },
@@ -121,6 +117,10 @@
             {
                 "name": "ozy4dm",
                 "score": 69.07729888190059
+            },
+            {
+                "name": "ebicochineal",
+                "score": 82.59008407906762
             },
             {
                 "name": "blackmath",
@@ -413,7 +413,7 @@
             },
             {
                 "name": "RafbillFr",
-                "score": 1
+                "score": 0
             },
             {
                 "name": "mmm-m",
@@ -487,7 +487,7 @@
         "name": "Topcoder Learning Path Ideation and Feedback Series - Data Science",
         "submissionStartDate": "2022-03-24T09:37:09Z",
         "submissionEndDate": "2022-03-29T09:55:26Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -536,7 +536,7 @@
         "name": "TCO Structure Idea Generation Challenge",
         "submissionStartDate": "2022-03-16T18:26:29Z",
         "submissionEndDate": "2022-04-01T18:32:27Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -741,7 +741,7 @@
         "name": "Language Identification Improvement & API Python Challenge",
         "submissionStartDate": "2022-02-23T22:40:55Z",
         "submissionEndDate": "2022-03-02T04:52:45Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -749,7 +749,7 @@
         "name": "Design a crypto coin",
         "submissionStartDate": "2022-02-03T16:32:18Z",
         "submissionEndDate": "2022-02-11T04:59:51Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -757,7 +757,7 @@
         "name": "Word-level Language Identification Python Challenge",
         "submissionStartDate": "2022-01-19T15:05:47Z",
         "submissionEndDate": "2022-01-24T15:09:34Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -1322,7 +1322,7 @@
         "name": "EDG Databricks Cluster Data Load Prediction Model Challenge",
         "submissionStartDate": "2021-12-06T11:16:21Z",
         "submissionEndDate": "2021-12-17T11:19:48Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -1330,7 +1330,7 @@
         "name": "Soro Journal Search Engine PoC Codebase Development Challenge",
         "submissionStartDate": "2021-11-20T01:47:55Z",
         "submissionEndDate": "2021-11-30T01:48:10Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
@@ -1824,7 +1824,7 @@
         "name": "Private Edge -Human Parameters Detection ML & Web Dev Challenge",
         "submissionStartDate": "2021-09-08T19:33:52Z",
         "submissionEndDate": "2021-10-02T07:34:48Z",
-        "tcoRelevant": false,
+        "tcoRelevant": true,
         "leaderboard": []
     },
     {
