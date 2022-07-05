@@ -10,7 +10,7 @@ $.getJSON("contests.json")
             else if (contest.submissionStartDate.getUTCMonth() >= 9) contest.stage = 2
             else if (contest.submissionStartDate.getUTCMonth() <= 5) contest.stage = 4
         }
-        contests = data
+        contests = data.filter(c => c.leaderboard.length > 0)
         listContests()
         updateLeaderboards()
     })
@@ -30,7 +30,9 @@ function listContests() {
         tr.append(`<td>${contest.submissionEndDate.toISOString().slice(0, 10)}</td>`)
         tr.append(`<td>${contest.stage}</td>`)
         tr.append(`<td><input type="checkbox" ${contest.tcoRelevant ? "checked" : ""} onchange="toggle(${index})"/></td>`)
-        tr.append(`<td><a href="#" class="btn btn-primary btn-sm ${contest.leaderboard.length > 0 ? "" : "disabled"}" id="btn-${contest.id}" onclick="show('${contest.id}')">show</a></td>`)
+        let detailedStats = ''
+        if (contest.detailedStats) detailedStats = `<a class="btn btn-primary btn-sm" target="_blank" href="${contest.detailedStats}">detailed</a>`
+        tr.append(`<td><a href="#" class="btn btn-primary btn-sm ${contest.leaderboard.length > 0 ? "" : "disabled"}" id="btn-${contest.id}" onclick="show('${contest.id}')">show</a> ${detailedStats}</td>`)
     }
 }
 

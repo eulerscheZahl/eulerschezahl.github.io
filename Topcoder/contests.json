@@ -1,7 +1,265 @@
 [
     {
+        "id": "d9570afb-dfde-43b0-b4e1-20434933c8cc",
+        "name": "Marathon Match 137",
+        "submissionStartDate": "2022-05-31T20:37:39Z",
+        "submissionEndDate": "2022-06-29T17:10:55Z",
+        "tcoRelevant": true,
+        "leaderboard": [
+            {
+                "name": "fgwiebfaoish",
+                "score": -1
+            },
+            {
+                "name": "Psyho",
+                "score": 97.60342618954456
+            },
+            {
+                "name": "yowa",
+                "score": 78.78364730768884
+            },
+            {
+                "name": "titia",
+                "score": 66.22363300399354
+            },
+            {
+                "name": "noronyoro",
+                "score": 47.427530000409206
+            },
+            {
+                "name": "nahco314",
+                "score": 53.22670831078824
+            },
+            {
+                "name": "ekiden",
+                "score": 41.96337005234787
+            },
+            {
+                "name": "ozy4dm",
+                "score": 52.95013791685265
+            },
+            {
+                "name": "simanman",
+                "score": 91.48848475146248
+            },
+            {
+                "name": "brthyyjp",
+                "score": 1.2907737338032934
+            },
+            {
+                "name": "goto_isyuku",
+                "score": 54.41954355506057
+            },
+            {
+                "name": "phocom",
+                "score": 27.019636392130035
+            },
+            {
+                "name": "dwij",
+                "score": 14.526875027931101
+            },
+            {
+                "name": "iwashi31",
+                "score": 85.17189286398654
+            },
+            {
+                "name": "nejineji",
+                "score": 82.03712348129444
+            },
+            {
+                "name": "besukohu",
+                "score": 54.23306605870415
+            },
+            {
+                "name": "tanzaku",
+                "score": 93.93114536535836
+            },
+            {
+                "name": "webexp",
+                "score": -1
+            },
+            {
+                "name": "colun",
+                "score": 94.29302230036059
+            },
+            {
+                "name": "highjump",
+                "score": 59.904717278900826
+            },
+            {
+                "name": "lordoskar",
+                "score": 65.79706879725025
+            },
+            {
+                "name": "SDESTINY",
+                "score": -1
+            },
+            {
+                "name": "ZLATKO",
+                "score": 20.51031633210054
+            },
+            {
+                "name": "mooaki",
+                "score": 75.88317150515992
+            },
+            {
+                "name": "maltsev.ed",
+                "score": 19.95641386826511
+            },
+            {
+                "name": "blackmath",
+                "score": 86.34870570299091
+            },
+            {
+                "name": "JacoCronje",
+                "score": 83.80308364242349
+            },
+            {
+                "name": "Daiver19",
+                "score": 85.38669438492583
+            },
+            {
+                "name": "platinum_prog",
+                "score": 35.15225784172145
+            },
+            {
+                "name": "kaede2020",
+                "score": 13.591833884003623
+            },
+            {
+                "name": "WinnerE",
+                "score": 57.065156000369875
+            },
+            {
+                "name": "sca1l",
+                "score": 33.580279438171445
+            },
+            {
+                "name": "houxiang",
+                "score": 47.182300565766155
+            },
+            {
+                "name": "quimey",
+                "score": 80.96441714587395
+            },
+            {
+                "name": "wanui",
+                "score": 59.97019932337256
+            },
+            {
+                "name": "schwarzahl",
+                "score": 38.37964906951431
+            },
+            {
+                "name": "my316g",
+                "score": 67.71691117889873
+            },
+            {
+                "name": "iehn",
+                "score": 80.56008524470488
+            },
+            {
+                "name": "yu_212",
+                "score": 63.69031585492582
+            },
+            {
+                "name": "tuff",
+                "score": 68.84656693985508
+            },
+            {
+                "name": "mengue",
+                "score": 16.797702953583375
+            },
+            {
+                "name": "hamuhei4869",
+                "score": 71.66152041308784
+            },
+            {
+                "name": "recuraki",
+                "score": 25.61067457146459
+            },
+            {
+                "name": "toku_",
+                "score": 68.27861151156964
+            },
+            {
+                "name": "skrzypl1",
+                "score": 77.8432497165366
+            },
+            {
+                "name": "tygrysek",
+                "score": 66.6374959895418
+            },
+            {
+                "name": "Stonefeang",
+                "score": 88.5933622550542
+            },
+            {
+                "name": "beginnner101",
+                "score": 1.2907737338032934
+            },
+            {
+                "name": "EvbCFfp1XB",
+                "score": 81.78933610219761
+            },
+            {
+                "name": "ssaattoo",
+                "score": 45.48612288126619
+            },
+            {
+                "name": "TSUKA325",
+                "score": 63.723636297196045
+            },
+            {
+                "name": "a9ua1i0n",
+                "score": 38.28374494987341
+            },
+            {
+                "name": "sarthakmanna",
+                "score": -1
+            },
+            {
+                "name": "mtsaka",
+                "score": 1.2907737338032934
+            },
+            {
+                "name": "AjJi",
+                "score": 12.780182305777561
+            },
+            {
+                "name": "gorbunov",
+                "score": 66.71142153446733
+            },
+            {
+                "name": "RafbillFr",
+                "score": 52.33637840964355
+            },
+            {
+                "name": "yunix",
+                "score": 68.71932180518675
+            },
+            {
+                "name": "monnu",
+                "score": 40.354803998950096
+            },
+            {
+                "name": "cup_of_tea",
+                "score": 6.856067694790614
+            },
+            {
+                "name": "michirakara",
+                "score": -1
+            },
+            {
+                "name": "ankitprograms",
+                "score": -1
+            }
+        ]
+    },
+    {
         "id": "9bb1c5e1-dbb3-4407-be0e-3cc0dc45bf1a",
         "name": "Marathon Match 136",
+        "detailedStats": "https://tc-wleite.github.io/mm136.html",
         "submissionStartDate": "2022-04-21T14:42:10Z",
         "submissionEndDate": "2022-05-25T17:14:11Z",
         "tcoRelevant": true,
@@ -247,6 +505,7 @@
     {
         "id": "ef5d19d2-de9b-4e37-b428-e7e103458425",
         "name": "Marathon Match 135",
+        "detailedStats": "https://tc-wleite.github.io/mm135.html",
         "submissionStartDate": "2022-04-06T17:21:10Z",
         "submissionEndDate": "2022-04-26T21:09:14Z",
         "tcoRelevant": true,
@@ -763,6 +1022,7 @@
     {
         "id": "5fb2b54f-055e-4059-8687-ebaa8dbd8a18",
         "name": "Marathon Match 133",
+        "detailedStats": "https://tc-wleite.github.io/mm133.html",
         "submissionStartDate": "2022-01-18T17:34:16Z",
         "submissionEndDate": "2022-02-16T18:09:04Z",
         "tcoRelevant": true,
@@ -1029,6 +1289,7 @@
     {
         "id": "3a6b8bf2-1e02-4acb-a50a-09a13ed9ba34",
         "name": "Marathon Match 132",
+        "detailedStats": "https://tc-wleite.github.io/mm132.html",
         "submissionStartDate": "2022-01-04T18:09:12Z",
         "submissionEndDate": "2022-01-19T18:15:17Z",
         "tcoRelevant": true,
@@ -1549,6 +1810,7 @@
     {
         "id": "eab61248-dcf2-4a3b-aa72-62c703d9a7dd",
         "name": "Marathon Match 130",
+        "detailedStats": "https://tc-wleite.github.io/mm130.html",
         "submissionStartDate": "2021-10-01T05:40:08Z",
         "submissionEndDate": "2021-10-20T16:44:47Z",
         "tcoRelevant": true,
